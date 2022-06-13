@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+/*Check to make sure that all the CSS styling is correct*/
 
 html,
 body,
@@ -117,7 +118,7 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-
+/*Make sure this is useable for the different screen sizes; test out!*/
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
