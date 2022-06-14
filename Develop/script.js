@@ -1,5 +1,14 @@
 // Assignment code here
+var minCharacter = 8
+var maxCharacter = 128
+var minTypes = 1
 
+var characters = {
+  lower: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+  upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+  number: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  special: ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "=", ":", ";", "?", "/", ",", "."]
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -15,3 +24,30 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+  var selectedCharacters = []
+  var length = prompt("Enter the length of your password between " + minCharacter + " and " + maxCharacter + ".")
+  if (length < minCharacter || length > maxCharacter) {
+    alert ("Password must be between " + minCharacter + " and " + maxCharacter + " .")
+    generatePassword ()
+  }
+  var upperCase = confirm("Would you like to include uppercase letters?")
+  var lowerCase = confirm("Would you like to include lowercase letters?")
+  var specialSymbols = confirm("Would you like to include special symbols?")
+  var numbers = confirm("Would you like to include numbers?")
+  console.log (upperCase, lowerCase, specialSymbols, numbers)
+  if (upperCase) {
+    selectedCharacters.push(...characters.upper)
+  }
+  if (lowerCase) {
+    selectedCharacters.push(...characters.lower)
+  }
+  if (number) {
+    selectedCharacters.push(...characters.number)
+  }
+  if (special) {
+    selectedCharacters.push(...characters.special)
+  }
+  console.log(selectedCharacters)
+}
