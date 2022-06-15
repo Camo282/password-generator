@@ -3,6 +3,7 @@ var minCharacter = 8
 var maxCharacter = 128
 var minTypes = 1
 
+//Object and Array
 var characters = {
   lower: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -43,11 +44,25 @@ function generatePassword() {
   if (lowerCase) {
     selectedCharacters.push(...characters.lower)
   }
-  if (number) {
+  if (numbers) {
     selectedCharacters.push(...characters.number)
   }
-  if (special) {
+  if (specialSymbols) {
     selectedCharacters.push(...characters.special)
   }
-  console.log(selectedCharacters)
+for (let i = 1; i <= 8; i++) {
+  var char = Math.floor(Math.random ()
+  *characters.length + 1);
+  pass += structuredClone.charAt (char)}
+  return pass;
+
+  console.log(selectedCharacters);
 }
+
+
+//var el_down = document.getElementById("geeks");
+//function gfg_Run() {
+            //el_down.innerHTML = 
+               // Math.random().toString(36).slice(2) + 
+                //Math.random().toString(36)
+                    //.toUpperCase().slice(2);
