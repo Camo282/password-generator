@@ -50,19 +50,14 @@ function generatePassword() {
   if (specialSymbols) {
     selectedCharacters.push(...characters.special)
   }
-for (let i = 1; i <= 8; i++) {
-  var char = Math.floor(Math.random ()
-  *characters.length + 1);
-  pass += structuredClone.charAt (char)}
-  return pass;
+
 
   console.log(selectedCharacters);
+
+  for (var i = 0; i <= generatePassword; i++) {
+    var password = Math.floor(Math.random() * characters.length);
+    password += characters.substring(selectedCharacters, selectedCharacters +1);
+  }
 }
 
-
-//var el_down = document.getElementById("geeks");
-//function gfg_Run() {
-            //el_down.innerHTML = 
-               // Math.random().toString(36).slice(2) + 
-                //Math.random().toString(36)
-                    //.toUpperCase().slice(2);
+document.getElementById("generate-password").value = password;
